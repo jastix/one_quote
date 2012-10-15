@@ -5,3 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+#Logger.new (Dir.pwd)
+quotes = YAML.load_stream(open('db/quotes.yaml'))
+
+quotes.take(100).each do |quote|
+  Quote.create(content: quote)
+end

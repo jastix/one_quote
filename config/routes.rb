@@ -1,4 +1,15 @@
 OneQuote::Application.routes.draw do
+  #get "quote/index"
+
+  #get "quote/new"
+
+  #get "quote/create"
+
+  #get "quote/update"
+
+  #get "quote/destroy"
+  root to: 'Quotes#index'
+  resources :quotes
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
