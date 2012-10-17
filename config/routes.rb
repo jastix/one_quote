@@ -1,4 +1,6 @@
 OneQuote::Application.routes.draw do
+  
+
   #get "quote/index"
 
   #get "quote/new"
