@@ -1,6 +1,17 @@
 OneQuote::Application.routes.draw do
   
 
+  get "users/index"
+
+  get "users/show"
+  get 'home/index'
+
+  authenticated :user do
+    root to: 'Quotes#index'
+  end
+
+  devise_for :users
+  resources :users
   #get "quote/index"
 
   #get "quote/new"
