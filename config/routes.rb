@@ -10,7 +10,7 @@ OneQuote::Application.routes.draw do
     root to: 'Quotes#index'
   end
 
-  devise_for :users
+  devise_for :users, controllers: { omniauth_callbacks: 'omniauth_callbacks' }
   resources :users
   #get "quote/index"
 
