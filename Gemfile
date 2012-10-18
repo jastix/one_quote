@@ -2,7 +2,8 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.8'
 
-gem 'bootstrap-sass', '2.0.4'
+gem 'bootstrap-sass', '~> 2.1.0.1'
+gem 'twitter-bootstrap-rails'
 gem 'bcrypt-ruby', '3.0.1'
 gem 'faker', '1.0.1'
 
@@ -10,6 +11,9 @@ gem 'devise'
 gem 'omniauth-facebook'
 gem 'omniauth'
 gem 'oauth2'
+gem 'koala'
+
+gem 'delayed_job_active_record'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 group :development, :test do

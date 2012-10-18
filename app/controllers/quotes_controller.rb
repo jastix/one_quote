@@ -15,4 +15,12 @@ class QuotesController < ApplicationController
 
   def destroy
   end
+
+  def share
+    if current_user
+      quote = params[:form][:quote]
+      User.delay.post_to_wall(current_user.id, quote)
+    end
+    redirect_to root_path, notice: 'Quote has been shared'
+  end
 end

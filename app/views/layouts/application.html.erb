@@ -7,20 +7,23 @@
   <%= csrf_meta_tags %>
 </head>
   <div class='menu'>
-    <ul class='navigation'>
-      <li><%= link_to 'Home', root_path %></li>
-      <% if user_signed_in? %>
-        Logged in as <%= current_user.email %>
-        <li><%= link_to 'Add a quote', new_quote_path %></li>
-        <li><%= link_to 'Profile', edit_user_registration_path %></li>
-        <li class='divider'></li>
-        <li><%= link_to 'Sign out', destroy_user_session_path, method: 'delete' %></li>
-      <% else %>
-        <li><%= link_to 'Log in', new_user_session_path %></li> | 
-        <li><%= link_to 'Register', new_user_registration_path %></li> |
-        <li><%= link_to 'Facebook login', user_omniauth_authorize_path(:facebook) %></li>
-      <% end %>
-    </ul>
+    <div class="nav-menu">
+      <%= link_to 'One Quote app', root_path, class: 'logo' %>
+      <ul class='navigation'>
+        <li><%= link_to 'Home', root_path %></li>
+        <% if user_signed_in? %>
+          
+          <li><%= link_to 'Add a quote', new_quote_path %></li>
+          <li><%= link_to current_user.email, edit_user_registration_path %></li>
+          <li id='sign_out'><%= link_to 'Sign out', destroy_user_session_path, method: 'delete' %></li>
+          <li></li>
+        <% else %>
+          <li><%= link_to 'Log in', new_user_session_path %></li>
+          <li><%= link_to 'Register', new_user_registration_path %></li>
+          <li><%= link_to 'Facebook login', user_omniauth_authorize_path(:facebook) %></li>
+        <% end %>
+      </ul>
+    </div>
   </div>
 
   <p class="notice"><%= notice %></p>

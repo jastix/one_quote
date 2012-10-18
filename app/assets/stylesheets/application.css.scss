@@ -11,7 +11,25 @@
  *= require_self
  *= require_tree .
  */
+@import 'bootstrap';
 
 .content {
   background: #343B45;
 }
+
+.menu {
+  @extend .navbar;
+
+  .nav-menu {
+    @extend .navbar-inner;
+
+    .logo {
+      @extend .brand;
+    }
+
+    .navigation {
+      @extend .nav;
+    }
+  }
+}
+

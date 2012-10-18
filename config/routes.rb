@@ -23,6 +23,7 @@ OneQuote::Application.routes.draw do
   #get "quote/destroy"
   root to: 'Quotes#index'
   resources :quotes
+  post 'quotes/share'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
