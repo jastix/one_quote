@@ -5,9 +5,17 @@ class QuotesController < ApplicationController
   end
 
   def new
+    @quote = Quote.new
   end
 
   def create
+    @quote = Quote.new(params[:quote])
+    if @quote.save
+      flash[:notice] = 'Added new quote!'
+      redirect_to root_path
+    else
+      render 'new'
+    end
   end
 
   def update

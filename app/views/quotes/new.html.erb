@@ -1,2 +1,12 @@
-<h1>Quote#new</h1>
-<p>Find me in app/views/quote/new.html.erb</p>
+<%= simple_form_for @quote, html: { class: 'form-horizontal'} do |f| %>
+  <fieldset>
+    <legend>Add new quote</legend>
+
+    <%= f.input :content , as: :text, label_html: { class: 'content_input_label' }, input_html: { rows: 10 } %>
+
+    <div class="form-actions">
+      <%= f.submit nil, class: 'submit_button' %>
+      <%= link_to 'Cancel', quotes_path, class: 'cancel_button' %>
+    </div>
+  </fieldset>
+<% end %>

@@ -23,6 +23,7 @@
 
   .share_button {
     @extend .btn;
+    @extend .btn-large;
     @extend .btn-info;
 
     .icon-share {
@@ -31,3 +32,26 @@
   }
 }
 
+.submit_button {
+  @extend .btn;
+  @extend .btn-primary;
+  background-color: $gray;
+}
+
+.cancel_button {
+  @extend .btn;
+  @extend .btn-danger;
+}
+
+.form-actions {
+  @extend .form-actions;
+  background-color: $gray;
+}
+
+legend {
+  color: $blue;
+}
+
+.content_input_label {
+  color: $blue;
+}
