@@ -48,8 +48,8 @@ class User < ActiveRecord::Base
     @facebook ||= Koala::Facebook::API.new(oauth_token)
   end
 
-  def self.post_to_wall(user_id, message)
+  def self.post_to_wall(user_id, message, link)
     user = User.find(user_id)
-    user.facebook.put_connections('me', 'links', link: "http://onequote.herokuapp.com/", message: message)
+    user.facebook.put_connections('me', 'links', link: link, message: message)
   end
 end

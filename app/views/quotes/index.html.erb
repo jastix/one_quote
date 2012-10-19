@@ -2,7 +2,7 @@
   <% if @quote.present? %>
     <div class="quote"><%= simple_format @quote.content %></div>
     <% if current_user %>
-    <div class="share_button"><i class="icon-share"></i><%= button_to 'Share on Facebook', action: 'share', form: { "quote" => sanitize(@quote.content) } %></div>
+    <div class="share_button"><i class="icon-share"></i><%= button_to 'Share on Facebook', action: 'share', form: { "quote" => sanitize(@quote.content), "link" => request.env['HTTP_REFERER'] }, remote: true %></div>
     <% end %>
   <% end %>
 </div>
