@@ -55,3 +55,29 @@ legend {
 .content_input_label {
   color: $blue;
 }
+
+.form {
+  @extend .form-horizontal;
+  color: $white;
+}
+
+.update_button {
+  @extend .btn;
+  @extend .btn-large;
+  @extend .btn-info;
+}
+
+h2 {
+  @extend .h2;
+  color: $white;
+}
+
+h3 {
+  @extend .h3;
+  color: $white;
+}
+
+.comment {
+  @extend .p;
+  color: $white;
+}

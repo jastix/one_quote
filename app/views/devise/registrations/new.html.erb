@@ -1,25 +1,20 @@
-<h2>Sign up</h2>
+<legend>Sign up</legend>
 
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), html: { class: 'form' } ) do |f| %>
   <%= devise_error_messages! %>
 
-  <div>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
+<fieldset>
+  <%= f.input :name %>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email %></div>
+  <%= f.input :email, required: true %>
 
   <% if f.object.password_required? %>
-    <div><%= f.label :password %><br />
-    <%= f.password_field :password %></div>
+    <%= f.input :password, required: true %>
 
-    <div><%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation %></div>
+    <%= f.input :password_confirmation, required: true %>
   <% end %>
-
-  <div><%= f.submit "Sign up" %></div>
+</fieldset>
+  <%= f.submit "Sign up", class: 'update_button' %>
 <% end %>
 
 <%= render "devise/shared/links" %>
