@@ -31,7 +31,7 @@ class QuotesController < ApplicationController
       User.delay.post_to_wall(current_user.id, quote)
       redirect_to root_path, notice: 'Quote has been shared'
     else
-      flash[:error] = "No permissions to publish to facebook"
+      redirect_to root_path, alert: 'No permissions to publish to facebook'
     end   
   end
 end
