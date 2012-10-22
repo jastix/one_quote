@@ -32,7 +32,6 @@ class QuotesController < ApplicationController
       redirect_to root_path, notice: 'Quote has been shared'
     else
       flash[:error] = "No permissions to publish to facebook"
-    end
-    
+    end   
   end
 end
