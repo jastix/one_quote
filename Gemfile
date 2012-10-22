@@ -17,6 +17,7 @@ gem 'koala'
 gem 'delayed_job_active_record'
 
 gem 'simple_form'
+gem 'thin'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 group :development, :test do
@@ -26,7 +27,7 @@ group :development, :test do
   gem 'guard-spork', '1.2.0'
   gem 'spork',       '0.9.2'
   gem 'email_spec'
-  gem 'thin'
+
 end
 
 # Gems used only for assets and not required
