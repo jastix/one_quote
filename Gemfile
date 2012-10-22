@@ -18,6 +18,7 @@ gem 'delayed_job_active_record'
 
 gem 'simple_form'
 gem 'thin'
+gem 'psych'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 group :development, :test do
