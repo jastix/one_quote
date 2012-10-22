@@ -26,10 +26,13 @@ class QuotesController < ApplicationController
 
 
   def share
-    if current_user
+    if current_user && current_user.facebook.get_object('me/permissions').first.include?('publish_stream')
       quote = params[:form][:quote]
       User.delay.post_to_wall(current_user.id, quote)
+      redirect_to root_path, notice: 'Quote has been shared'
+    else
+      redirect_to root_path, error: 'No permissions to publish to facebook'
     end
-    redirect_to root_path, notice: 'Quote has been shared'
+    
   end
 end
