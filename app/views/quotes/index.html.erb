@@ -1,6 +1,6 @@
 <div class="container">
   <% if @quote.present? %>
-    <div class="quote"><%= simple_format @quote.content %></div>
+    <%= render @quote %>
     <% if current_user %>
     <%= button_to 'Share on Facebook', options = {action: 'share', form: { "quote" => sanitize(@quote.content) } }, html_options = { class: 'share_button'} %>
     <% end %>

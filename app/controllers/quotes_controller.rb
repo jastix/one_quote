@@ -1,11 +1,16 @@
 class QuotesController < ApplicationController
   before_filter :authenticate_user!, only: [:new, :create, :update, :destroy]
+  
   def index
     @quote = Quote.all.sample
   end
 
   def new
     @quote = Quote.new
+  end
+
+  def show
+    @quote = Quote.find(params[:id])
   end
 
   def create
@@ -18,11 +23,7 @@ class QuotesController < ApplicationController
     end
   end
 
-  def update
-  end
 
-  def destroy
-  end
 
   def share
     if current_user

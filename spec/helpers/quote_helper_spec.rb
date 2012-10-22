@@ -10,6 +10,7 @@ require 'spec_helper'
 #     end
 #   end
 # end
-describe QuoteHelper do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+def login(user)
+  post user_session_path, 'user[email]' => user.email, 'user[password]' => user.password, 'user[password_confirmation]' => user.password
 end
