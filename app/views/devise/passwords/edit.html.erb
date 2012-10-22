@@ -3,7 +3,7 @@
 <%= simple_form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put, class: 'form' } ) do |f| %>
   <%= devise_error_messages! %>
 
-  <%= f.input :reset_password_token, as: :hidden %>
+  <%= f.input :reset_password_token, as: :hidden, value: params[:reset_password_token] %>
 
   <fieldset>
     <%= f.input :password, "New password" %>
