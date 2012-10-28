@@ -2,7 +2,9 @@ class QuotesController < ApplicationController
   before_filter :authenticate_user!, only: [:new, :create, :update, :destroy]
   
   def index
-    @quote = Quote.all.sample
+    #@quote = Quote.all.sample # pure rails
+    #@quote = Quote.order("RANDOM()").first #faster use RAND() for MySQL
+    @quote = Quote.offset(rand(Quote.count)).first #fastest version
   end
 
   def new
